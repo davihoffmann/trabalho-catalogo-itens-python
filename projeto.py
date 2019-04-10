@@ -23,7 +23,7 @@ CLIENT_ID = json.loads(
     open('client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Catalogo"
 
-engine = create_engine('sqlite:///catalogo-itens.db',
+engine = create_engine('postgresql://catalog:catalog@localhost/catalog',
                        connect_args={'check_same_thread': False},
                        poolclass=StaticPool, echo=True)
 Base.metadata.bind = engine
