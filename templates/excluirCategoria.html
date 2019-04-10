@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+	<ol class="breadcrumb">
+      <li><a href="{{url_for('listaCategorias')}}">Categoria</a></li>
+      <li class="active">Excluir categoria</li>
+    </ol>
+
+    <div class="page-header">
+        <h1><small>Excluir Categoria</small></h1>
+    </div>
+    <p class="center"> Você tem certeza que gostaria de excluir a categoria <strong>{{categoria.nome}}</strong>?</p>
+    <form action="#" method='post'>
+        <button type="submit" class="btn btn-danger" role="button">Excluir</button>
+        <a href="{{url_for('listaCategorias')}}" class="btn btn-default">Voltar</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="row">
+    <h3 class="center">Edição de Produto</h3>
+</div>
+
+<div class="page-header">
+    <h1><small>Alterar Produtos</small></h1>
+</div>
+
+<form action="#" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="{{item.nome}}">
+    </div>
+
+    <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição" value="{{item.descricao}}">
+    </div>
+
+    <div class="form-group">
+        <label for="preco">Preço:</label>
+        <input type="text" class="form-control" id="preco" name="preco" placeholder="Preço" value="{{item.preco}}">
+    </div>
+
+    <div class="form-group">
+        <label for="quantidade">Quantidade:</label>
+        <input type="text" class="form-control" id="quantidade" name="quantidade" placeholder="Quantidade" value="{{item.quantidade}}">
+    </div>
+
+    <div class="page-header">
+        <h1><small>Selecione o Tipo do Produto</small></h1>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-12">
+            <label>
+                <input name="tipo" value="tenis" type="radio" {% if item.tipo=='tenis'%} checked {%endif%}/>
+                <span>Tenis</span>
+            </label>
+        </div>
+        <div class="col-md-12">
+            <label>
+                <input name="tipo" value="camisetas" type="radio" {% if item.tipo=='camisetas'%} checked {%endif%}/>
+                <span>Camisetas</span>
+            </label>
+        </div>
+        <div class="col-md-12">
+            <label>
+                <input name="tipo" value="bermudas" type="radio" {% if item.tipo=='bermudas'%} checked {%endif%}/>
+                <span>Bermudas</span>
+            </label>
+        </div>
+        <div class="col-md-12">
+            <label>
+                <input name="tipo" value="bolas" type="radio" {% if item.tipo=='bolas'%} checked {%endif%}/>
+                <span>Bolas</span>
+            </label>
+        </div>
+    </div>
+
+    <div style="margin: 20px 0 25px 0">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="{{url_for('listaProdutos', categoria_id = categoria_id)}}" class="btn btn-default">Voltar</a>
+    </div>
+</form>
+{% endblock %}

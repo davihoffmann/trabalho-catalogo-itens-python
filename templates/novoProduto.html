@@ -1,0 +1,65 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="page-header">
+    <h1><small>Cadastro de Produtos</small></h1>
+</div>
+
+<form action="#" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+    </div>
+
+    <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+    </div>
+
+    <div class="form-group">
+        <label for="preco">Preço:</label>
+        <input type="text" class="form-control" id="preco" name="preco" placeholder="Preço">
+    </div>
+
+    <div class="form-group">
+        <label for="quantidade">Quantidade:</label>
+        <input type="text" class="form-control" id="quantidade" name="quantidade" placeholder="Quantidade">
+    </div>
+
+    <div class="page-header">
+        <h1><small>Selecione o Tipo do Produto</small></h1>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-12">
+            <label>
+                <input name="tipo" value="tenis" type="radio" checked/>
+                <span>Tenis</span>
+            </label>
+        </div>
+        <div class="col-md-12">
+            <label>
+                <input name="tipo" value="camisetas" type="radio"/>
+                <span>Camisetas</span>
+            </label>
+        </div>
+        <div class="col-md-12">
+            <label>
+                <input name="tipo" value="bermudas" type="radio"/>
+                <span>Bermudas</span>
+            </label>
+        </div>
+        <div class="col-md-12">
+            <label>
+                <input name="tipo" value="bolas" type="radio"/>
+                <span>Bolas</span>
+            </label>
+        </div>
+    </div>
+
+    <div style="margin: 20px 0 25px 0">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="{{url_for('listaProdutos', categoria_id = categoria_id)}}" class="btn btn-default">Voltar</a>
+    </div>
+</form>
+</div>
+{% endblock %}

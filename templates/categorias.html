@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block content %}
+<ol class="breadcrumb">
+  <li class="active">Categorias</li>
+</ol>
+
+<div class="row">
+    <h3 class="center">Categorias</h3>
+</div>
+
+{%if 'username' in session %}
+<div style="margin: 15px 0">
+    <a href="{{url_for('novaCategoria')}}" class="btn btn-success">Nova Categoria</a>
+</div>
+{% endif %}
+
+<div class="row">
+    {% for categoria in categorias %}
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="thumbnail">
+                    <img src="{{ url_for('static', filename='semImage.jpeg') }}">
+                    <div class="caption">
+                        <h3>{{categoria.nome}}</h3>
+                        <p>
+                            <div class="btn-group" role="group" aria-label="...">
+                                <a href="{{url_for('listaProdutos', categoria_id = categoria.id)}}" class="btn btn-default" role="button">Visualizar Produtos</a>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

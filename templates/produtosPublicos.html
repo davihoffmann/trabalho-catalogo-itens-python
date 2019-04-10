@@ -1,0 +1,148 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="page-header">
+    <h1>{{ categoria.nome }}</h1>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ usuario.nome }}</h3>
+  </div>
+  <div class="panel-body">
+    <img src="{{ usuario.imagem}}" alt="" class="img-responsive img-circle" style="width: 75px; height: 75px">
+  </div>
+</div>
+
+{% if produtos !=[] %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1><small>Tenis</small></h1>
+        </div>
+        <div class="row">
+            {% for produto in produtos %}
+            {% if produto.tipo == 'tenis' %}
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <img src="{{ url_for('static', filename='semImage.jpeg') }}">
+                            <div class="caption">
+                                <h3>{{produto.nome}}</h3>
+                                <p>{{produto.descricao}}</p>
+                                <p>
+                                    <ul>
+                                        <li>{{produto.preco}}</li>
+                                        <li>{{produto.quantidade}}</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="col s3 center">
+        <div class="page-header">
+            <h1><small>Bolas</small></h1>
+        </div>
+        
+        <div class="row">
+            {% for produto in produtos %}
+            {% if produto.tipo == 'bolas' %}
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <img src="{{ url_for('static', filename='semImage.jpeg') }}">
+                            <div class="caption">
+                                <h3>{{produto.nome}}</h3>
+                                <p>{{produto.descricao}}</p>
+                                <p>
+                                    <ul>
+                                        <li>{{produto.preco}}</li>
+                                        <li>{{produto.quantidade}}</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="col-md-12">
+       <div class="page-header">
+            <h1><small> Camisetas</small></h1>
+        </div>
+
+        <div class="row">
+            {% for produto in produtos %}
+            {% if produto.tipo == 'camisetas' %}
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <img src="{{ url_for('static', filename='semImage.jpeg') }}">
+                            <div class="caption">
+                                <h3>{{produto.nome}}</h3>
+                                <p>{{produto.descricao}}</p>
+                                <p>
+                                    <ul>
+                                        <li>{{produto.preco}}</li>
+                                        <li>{{produto.quantidade}}</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-md-12">
+       <div class="page-header">
+            <h1><small> Bermudas</small></h1>
+        </div>
+
+        <div class="row">
+            {% for produto in produtos %}
+            {% if produto.tipo == 'bermudas' %}
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <img src="{{ url_for('static', filename='semImage.jpeg') }}">
+                            <div class="caption">
+                                <h3>{{produto.nome}}</h3>
+                                <p>{{produto.descricao}}</p>
+                                <p>
+                                    <ul>
+                                        <li>{{produto.preco}}</li>
+                                        <li>{{produto.quantidade}}</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% else %}
+<h4 class="center">Nenhum Produto Encontrado</h4>
+{% endif %}
+{% endblock %}

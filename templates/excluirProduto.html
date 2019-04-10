@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1><small>Excluir Produto</small></h1>
+    </div>
+
+    <p>Você tem certeza que gostaria de excluir o produto <strong>{{produto.nome}}</strong>?</p>
+    
+    <form action="#" method='post'>
+        <button type="submit" class="btn btn-danger" role="button">Excluir</button>
+        <a href="{{url_for('listaProdutos', categoria_id = categoria_id)}}" class="btn btn-default">Voltar</a>
+    </form>
+</div>
+{% endblock %}

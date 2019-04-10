@@ -1,0 +1,182 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="page-header">
+    <h1>{{ categoria.nome }}</h1>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ usuario.nome }}</h3>
+  </div>
+  <div class="panel-body">
+    <img src="{{ usuario.imagem}}" alt="" class="img-responsive img-circle" style="width: 75px; height: 75px">
+  </div>
+</div>
+
+{% if produtos !=[] %}
+<div class="btn-group" role="group" aria-label="...">
+  <a href="{{url_for('novoProdutoCategoria', categoria_id = categoria.id)}}" class="btn btn-success">Adicionar produto</a>
+  <a href="{{url_for('editarCategoria', categoria_id = categoria.id)}}" class="btn btn-primary">Editar Categoria</a>
+  <a href="{{url_for('excluirCategoria', categoria_id = categoria.id)}}" class="btn btn-danger">Excluir Categoria</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1><small>Tenis</small></h1>
+        </div>
+        
+        <div class="row">
+            {% for produto in produtos %}
+            {% if produto.tipo == 'tenis' %}
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <img src="{{ url_for('static', filename='semImage.jpeg') }}">
+                            <div class="caption">
+                                <h3>{{produto.nome}}</h3>
+                                <p>{{produto.descricao}}</p>
+                                <p>
+                                    <ul>
+                                        <li><strong>Valor:</strong> {{produto.preco}}</li>
+                                        <li><strong>Quantidade: </strong> {{produto.quantidade}}</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <a href="{{url_for('editarProduto', categoria_id = categoria.id, produto_id=produto.id)}}" class="btn btn-primary" role="button">Editar</a> 
+                                        <a href="{{url_for('excluirProduto', categoria_id = categoria.id, produto_id=produto.id)}}" class="btn btn-danger" role="button">Excluir</a>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1><small>Bolas</small></h1>
+        </div>
+        
+        <div class="row">
+            {% for produto in produtos %}
+            {% if produto.tipo == 'bolas' %}
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <img src="{{ url_for('static', filename='semImage.jpeg') }}">
+                            <div class="caption">
+                                <h3>{{produto.nome}}</h3>
+                                <p>{{produto.descricao}}</p>
+                                <p>
+                                    <ul>
+                                        <li><strong>Valor:</strong> {{produto.preco}}</li>
+                                        <li><strong>Quantidade: </strong> {{produto.quantidade}}</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <a href="{{url_for('editarProduto', categoria_id = categoria.id, produto_id=produto.id)}}" class="btn btn-primary" role="button">Editar</a> 
+                                        <a href="{{url_for('excluirProduto', categoria_id = categoria.id, produto_id=produto.id)}}" class="btn btn-danger" role="button">Excluir</a>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1><small>Camisetas</small></h1>
+        </div>
+
+        <div class="row">
+            {% for produto in produtos %}
+            {% if produto.tipo == 'camisetas' %}
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <img src="{{ url_for('static', filename='semImage.jpeg') }}">
+                            <div class="caption">
+                                <h3>{{produto.nome}}</h3>
+                                <p>{{produto.descricao}}</p>
+                                <p>
+                                    <ul>
+                                        <li><strong>Valor:</strong> {{produto.preco}}</li>
+                                        <li><strong>Quantidade: </strong> {{produto.quantidade}}</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <a href="{{url_for('editarProduto', categoria_id = categoria.id, produto_id=produto.id)}}" class="btn btn-primary" role="button">Editar</a> 
+                                        <a href="{{url_for('excluirProduto', categoria_id = categoria.id, produto_id=produto.id)}}" class="btn btn-danger" role="button">Excluir</a>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1><small>Bermudas</small></h1>
+        </div>
+
+        <div class="row">
+            {% for produto in produtos %}
+            {% if produto.tipo == 'bermudas' %}
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <img src="{{ url_for('static', filename='semImage.jpeg') }}">
+                            <div class="caption">
+                                <h3>{{produto.nome}}</h3>
+                                <p>{{produto.descricao}}</p>
+                                <p>
+                                    <ul>
+                                        <li><strong>Valor:</strong> {{produto.preco}}</li>
+                                        <li><strong>Quantidade: </strong> {{produto.quantidade}}</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <a href="{{url_for('editarProduto', categoria_id = categoria.id, produto_id=produto.id)}}" class="btn btn-primary" role="button">Editar</a> 
+                                        <a href="{{url_for('excluirProduto', categoria_id = categoria.id, produto_id=produto.id)}}" class="btn btn-danger" role="button">Excluir</a>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% else %}
+<a href="{{url_for('novoProdutoCategoria', categoria_id = categoria.id)}}" class="btn btn-success">Adicionar produto</a>
+<div class="row">
+    <h4 class="center">Nenhum Produto Encontrado</h4>
+</div>
+{% endif %}
+{% endblock %}

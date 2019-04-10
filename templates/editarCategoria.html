@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+    <ol class="breadcrumb">
+      <li><a href="{{url_for('listaCategorias')}}">Categoria</a></li>
+      <li class="active">Editar categoria</li>
+    </ol>
+
+    <div class="row">
+        <h3 class="center">Editar Categoria</h3>
+    </div>
+
+    <form action="{{ url_for('editarCategoria',categoria_id = categoria.id)}}" method="post">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="{{categoria.nome}}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="{{url_for('listaCategorias')}}" class="btn btn-default">Voltar</a>
+    </form>
+</div>
+{% endblock %}

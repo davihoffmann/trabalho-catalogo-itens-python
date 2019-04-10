@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+    <ol class="breadcrumb">
+      <li><a href="{{url_for('listaCategorias')}}">Categoria</a></li>
+      <li class="active">Nova categoria</li>
+    </ol>
+
+    <div class="row">
+        <h3 class="center">Nova Categoria</h3>
+    </div>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
+{% endblock %}

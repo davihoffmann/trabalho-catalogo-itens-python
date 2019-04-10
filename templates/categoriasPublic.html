@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="row">
+    {% for categoria in categorias %}
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="thumbnail">
+                    <img src="{{ url_for('static', filename='semImage.jpeg') }}">
+                    <div class="caption">
+                        <h3>{{categoria.nome}}</h3>
+                        <p>
+                            <a href="{{url_for('listaProdutos', categoria_id = categoria.id)}}" class="btn btn-default" role="button">Visualizar Produtos</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Projeto Catalogo de Itens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{url_for('listaCategorias')}}">Catalogo de Itens</a>
+            </div>
+
+            {%if 'username' not in session %}
+            <a href="{{url_for('showLogin')}}" class="btn btn-default navbar-btn navbar-right">Login</a>
+            {% else %}
+            <a href="{{url_for('disconnect')}}" class="btn btn-default navbar-btn navbar-right">Desconectar</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Catalogo de Itens Esportivos</h1>
+            <p>Fullstack Nanodegree</p>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="container">
+            {% for message in messages %}
+                <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+</header>
+<main>
+    <section>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </section>
+
+<!--
+    <nav class="navbar navbar-default navbar-fixed-bottom" style="margin-top: 15px">
+        <div class="container">
+            &copy; 2019 - Catalogo de Itens
+        </div>
+    </nav>
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//apis.google.com/js/platform.js?onload=start"> </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+</main>
+</body>
+</html>
