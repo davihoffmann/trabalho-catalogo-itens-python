@@ -47,7 +47,7 @@ produtoFutebolCamiseta = Produto(nome="Camisa Barcelona I 19 Nike"
                                  quantidade="1",
                                  categoria_id=1,
                                  usuario_id=1)
-session.add(produtoBasqueteAgasalho)
+session.add(produtoFutebolCamiseta)
 session.commit()
 produtoFutebolCamiseta2 = Produto(nome="Camisa do Vasco da Gama - Masculina",
                                   descricao="Camisa do Vasco da Gama II"
@@ -57,7 +57,7 @@ produtoFutebolCamiseta2 = Produto(nome="Camisa do Vasco da Gama - Masculina",
                                   quantidade="1",
                                   categoria_id=1,
                                   usuario_id=1)
-session.add(produtoBasqueteBandeira)
+session.add(produtoFutebolCamiseta2)
 session.commit()
 produtoBasqueteBermuda = Produto(nome="Bermuda Juventus",
                                  descricao="Bermuda Juventus Shadow - "
@@ -67,7 +67,7 @@ produtoBasqueteBermuda = Produto(nome="Bermuda Juventus",
                                  quantidade="1",
                                  categoria_id=1,
                                  usuario_id=1)
-session.add(produtoBasqueteCamiseta)
+session.add(produtoBasqueteBermuda)
 session.commit()
 
 # Produtos Categoria Futebol Americano
@@ -91,7 +91,7 @@ produtoFutebolAmericanoCamiseta = Produto(nome="Camiseta New Era"
                                           quantidade="7",
                                           categoria_id=2,
                                           usuario_id=1)
-session.add(produtoFutebolBandeira)
+session.add(produtoFutebolAmericanoCamiseta)
 session.commit()
 produtoFutebolAmericanoCasemita2 = Produto(nome="Camiseta New Era"
                                            " Washington Redskins Vein Year",
@@ -103,7 +103,7 @@ produtoFutebolAmericanoCasemita2 = Produto(nome="Camiseta New Era"
                                            quantidade="3",
                                            categoria_id=2,
                                            usuario_id=1)
-session.add(produtoFutebolCamiseta)
+session.add(produtoFutebolAmericanoCasemita2)
 session.commit()
 
 # Produtos Categoria Basquete
@@ -115,7 +115,7 @@ produtoBasqueteTenis = Produto(nome="Tenis Nike Fly By Low",
                                quantidade="5",
                                categoria_id=3,
                                usuario_id=1)
-session.add(produtoVoleiAgasalho)
+session.add(produtoBasqueteTenis)
 session.commit()
 produtoVoleiBandeira = Produto(nome="Bola de Basquete",
                                descricao="Bola de Basquete"
